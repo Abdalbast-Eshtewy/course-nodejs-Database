@@ -18,6 +18,6 @@ exports.addProduct =  (req , res) => {
     res.json({
         msg : "product added successfully",
         state : 1,
-        data : [],
+        data : [name,price],
     })
 }

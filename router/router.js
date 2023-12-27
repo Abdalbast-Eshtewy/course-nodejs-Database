@@ -4,7 +4,7 @@ const router = express.Router();
 const PostsController = require('../controller/PostsController');
 const UsersController = require('../controller/UsersController');
 const ProductController = require('../controller/ProductController');
-
+const validation = require('../middleware/validation');
 
 router.get('/', (req , res) => {
     res.json({
@@ -14,7 +14,8 @@ router.get('/', (req , res) => {
     })
 })
 router.post('/addProduct' , ProductController.addProduct)
-router.post('/login', UsersController.loginUser)
-router.post('/register',UsersController.registerUser)
+router.post('/login',validation.loginFields,UsersController.logincontroller)
+router.post('/register',validation.registerFields,UsersController.registercontroller)
+router.post('/users/salarys', UsersController.getAllSalarys)
 
 module.exports = router;
