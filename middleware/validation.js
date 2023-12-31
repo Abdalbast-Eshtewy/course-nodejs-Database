@@ -2,7 +2,7 @@ exports.loginFields = (req , res , next) => {
      
     const username = req.body.username;
     const password = req.body.password;
-
+    console.log(req.body.username)  
     if(!username || !password){
         return
         res.json({

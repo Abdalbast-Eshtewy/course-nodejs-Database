@@ -8,9 +8,6 @@ const studentSchema = new Schema({
     age : {
         type : Number,
     },
-    class : {
-        type : String , 
-    },
 });
 
 module.exports = studentSchema;
